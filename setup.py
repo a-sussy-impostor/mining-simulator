@@ -1,9 +1,12 @@
 from os import system,environ
 from time import sleep as wait
 from colorama import Fore as f
-import tkinter as tk
+# import tkinter as tk
+# commented out because unused
 import json
 from random import randint, choice, randrange
+
+# save the colorama module colors into variables
 
 red = f.RED
 blue = f.BLUE
@@ -46,7 +49,8 @@ def title():
     titleall = [title1,title2,title3,title4,title5,title6,title7,title8,title9,title10,title11,title12]
     return listToString(titleall,"\n")
 # sets the username
-username = environ["REPL_OWNER"]
+
+access = False
 
 # customize the menu
 heading = "———————————————————————————————————————— ⛏  Mining Simulator  ———————————————————————————————————————— "
@@ -59,6 +63,7 @@ def report(e,write = False):
   print(f"{red}An Error Occurred while running: {e} {reset}")
   if write == True:
      with open("error.txt","w") as f:
+        # writes the error
         f.write(str(e))
 # Gamedata
 biome = green + "Plains" + reset
